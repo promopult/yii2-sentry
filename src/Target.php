@@ -9,16 +9,18 @@ namespace notamedia\sentry;
 use Yii;
 use Throwable;
 use yii\web\User;
+use Sentry\Event;
 use yii\log\Logger;
 use yii\di\Instance;
 use Sentry\Severity;
 use yii\web\Request;
+use Sentry\EventHint;
 use Sentry\State\Scope;
 use yii\helpers\ArrayHelper;
 
-use function Sentry\captureException;
-use function Sentry\captureMessage;
 use function Sentry\withScope;
+use function Sentry\captureEvent;
+use function Sentry\captureException;
 
 /**
  * SentryTarget records log messages in a Sentry.
@@ -81,13 +83,23 @@ class Target extends yii\log\Target
             withScope(function (Scope $scope) use ($text, $level, $data) {
                 if (is_array($text)) {
                     if (isset($text['msg'])) {
-                        $data['message'] = $text['msg'];
+                        $data['message'] = (string) $text['msg'];
                         unset($text['msg']);
+                    }
+
+                    if (isset($text['message'])) {
+                        $data['message'] = (string) $text['message'];
+                        unset($text['message']);
                     }
 
                     if (isset($text['tags'])) {
                         $data['tags'] = ArrayHelper::merge($data['tags'], $text['tags']);
                         unset($text['tags']);
+                    }
+
+                    if (isset($text['exception']) && $text['exception'] instanceof Throwable) {
+                        $data['exception'] = $text['exception'];
+                        unset($text['exception']);
                     }
 
                     $data['extra'] = $text;
@@ -114,7 +126,13 @@ class Target extends yii\log\Target
                 if ($text instanceof Throwable) {
                     captureException($text);
                 } else {
-                    captureMessage($data['message'], $this->getLogLevel($level));
+                    $event = Event::createEvent();
+                    $event->setMessage($data['message']);
+                    $event->setLevel($this->getLogLevel($level));
+
+                    captureEvent($event, EventHint::fromArray(array_filter([
+                        'exception' => $data['exception'] ?? null,
+                    ])));
                 }
             });
         }
