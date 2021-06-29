@@ -20,7 +20,11 @@ return [
             'class' => 'notamedia\sentry\Component',
             'dsn' => 'http://2682ybvhbs347:235vvgy465346@sentry.io/1',
             // Additional options for `Sentry\init`:
-            'clientOptions' => ['release' => 'my-project-name@2.3.12'],
+            'clientOptions' => [
+                'release' => 'my-project-name@2.3.12',
+                //Performance Monitoring
+                'traces_sample_rate' => 1.0,
+            ],
             //collect JavaScript errors, default false
             'jsNotifier' => true,
             //Collect javascript errors to different project
@@ -28,6 +32,9 @@ return [
             // Additional options for javascript `Sentry\init`:
             'jsClientOptions' => [
                 'release' => 'my-project-name@2.3.12',
+                //Performance Monitoring
+                'integrations' => '[new Sentry.Integrations.BrowserTracing()]',
+                'tracesSampleRate' => 0.2,
             ],
             // Write the context information (the default is true):
             'context' => true,
