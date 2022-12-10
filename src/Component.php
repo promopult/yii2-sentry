@@ -19,7 +19,7 @@ use Sentry\Integration\FatalErrorListenerIntegration;
  * Class SentryComponent
  * @package notamedia\sentry
  */
-class Component extends yii\base\Component
+class Component extends \yii\base\Component
 {
     /**
      * @var string Sentry client key.

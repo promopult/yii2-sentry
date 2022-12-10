@@ -26,7 +26,7 @@ use function Sentry\captureException;
  * SentryTarget records log messages in a Sentry.
  * @see https://sentry.io
  */
-class Target extends yii\log\Target
+class Target extends \yii\log\Target
 {
     /**
      * @var string|Component
