@@ -26,6 +26,9 @@
     }
   },
   "extra": {
+    "branch-alias": {
+      "dev-master": "1.8.x-dev"
+    },
     "asset-vcs-driver-options": {
       "github-no-api": true
     },
