@@ -11,8 +11,8 @@
     "php": "^7.2|^8.0",
     "yiisoft/yii2": "^2.0",
     "sentry/sdk": "3.5.*",
-    "npm-asset/sentry--browser": "7.22.*",
-    "npm-asset/sentry--tracing": "7.22.*"
+    "npm-asset/sentry--browser": "6.19.*",
+    "npm-asset/sentry--tracing": "6.19.*"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
