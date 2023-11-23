@@ -11,13 +11,14 @@ use yii\web\AssetBundle;
  */
 class BrowserAsset extends AssetBundle
 {
-    public $sourcePath = '@npm/sentry--browser';
+    public $baseUrl = 'https://browser.sentry-cdn.com/7.81.1';
 
     public $js = [
-        'build/bundle.min.js',
+        'bundle.min.js',
     ];
 
     public $jsOptions = [
         'position' => View::POS_HEAD,
+        'crossorigin' => 'anonymous',
     ];
 }

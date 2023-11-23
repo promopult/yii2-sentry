@@ -11,14 +11,15 @@ use yii\web\AssetBundle;
  */
 class TracingAsset extends AssetBundle
 {
-    public $sourcePath = '@npm/sentry--tracing';
+    public $baseUrl = 'https://browser.sentry-cdn.com/7.81.1';
 
     public $js = [
-        'build/bundle.tracing.min.js',
+        'bundle.tracing.min.js',
     ];
 
     public $jsOptions = [
         'position' => View::POS_HEAD,
+        'crossorigin' => 'anonymous',
     ];
 
     public $depends = [
