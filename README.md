@@ -1,14 +1,13 @@
 # [Sentry](https://sentry.io) logger for Yii2
 
-[![Build Status](https://travis-ci.org/notamedia/yii2-sentry.svg)](https://travis-ci.org/notamedia/yii2-sentry)
-[![Latest Stable Version](https://poser.pugx.org/notamedia/yii2-sentry/v/stable)](https://packagist.org/packages/notamedia/yii2-sentry) 
-[![Total Downloads](https://poser.pugx.org/notamedia/yii2-sentry/downloads)](https://packagist.org/packages/notamedia/yii2-sentry) 
-[![License](https://poser.pugx.org/notamedia/yii2-sentry/license)](https://packagist.org/packages/notamedia/yii2-sentry)
+[![Latest Stable Version](https://poser.pugx.org/nohnaimer/yii2-sentry/v/stable)](https://packagist.org/packages/nohnaimer/yii2-sentry) 
+[![Total Downloads](https://poser.pugx.org/nohnaimer/yii2-sentry/downloads)](https://packagist.org/packages/nohnaimer/yii2-sentry) 
+[![License](https://poser.pugx.org/nohnaimer/yii2-sentry/license)](https://packagist.org/packages/nohnaimer/yii2-sentry)
 
 ## Installation
 
 ```bash
-composer require notamedia/yii2-sentry
+composer require nohnaimer/yii2-sentry
 ```
 
 Add target class in the application config:
@@ -17,7 +16,7 @@ Add target class in the application config:
 return [
     'components' => [
         'sentry' => [
-            'class' => 'notamedia\sentry\Component',
+            'class' => 'nohnaimer\sentry\Component',
             'dsn' => 'http://2682ybvhbs347:235vvgy465346@sentry.io/1',
             // Additional options for `Sentry\init`:
             'clientOptions' => [
@@ -45,7 +44,7 @@ return [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
                 [
-                    'class' => 'notamedia\sentry\Target',
+                    'class' => 'nohnaimer\sentry\Target',
                     'levels' => ['error', 'warning'],
                 ],
             ],
@@ -78,7 +77,7 @@ Writing messages with extra data:
 ```php
     'targets' => [
         [
-            'class' => 'notamedia\sentry\Target',
+            'class' => 'nohnaimer\sentry\Target',
             'levels' => ['error', 'warning'],
             'extraCallback' => function ($message, $extra) {
                 // some manipulation with data

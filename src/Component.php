@@ -1,6 +1,6 @@
 <?php
 
-namespace notamedia\sentry;
+namespace nohnaimer\sentry;
 
 use Yii;
 use Throwable;
@@ -9,15 +9,15 @@ use Sentry\SentrySdk;
 use yii\helpers\Json;
 use yii\web\Application;
 use Sentry\ClientBuilder;
+use nohnaimer\sentry\assets\TracingAsset;
 use Sentry\Integration\IntegrationInterface;
-use notamedia\sentry\assets\TracingAsset;
 use Sentry\Integration\ErrorListenerIntegration;
 use Sentry\Integration\ExceptionListenerIntegration;
 use Sentry\Integration\FatalErrorListenerIntegration;
 
 /**
  * Class SentryComponent
- * @package notamedia\sentry
+ * @package nohnaimer\sentry
  */
 class Component extends \yii\base\Component
 {

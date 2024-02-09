@@ -1,5 +1,5 @@
 {
-  "name": "notamedia/yii2-sentry",
+  "name": "nohnaimer/yii2-sentry",
   "description": "Yii2 logger for Sentry",
   "keywords": [
     "sentry",
@@ -20,12 +20,12 @@
   },
   "autoload": {
     "psr-4": {
-      "notamedia\\sentry\\": "src"
+      "nohnaimer\\sentry\\": "src"
     }
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "1.8.x-dev"
+      "dev-master": "2.0.x-dev"
     },
     "asset-vcs-driver-options": {
       "github-no-api": true

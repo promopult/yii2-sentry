@@ -32,17 +32,17 @@ $application = new \yii\web\Application([
         'log' => [
             'targets' => [
                 [
-                    'class' => \yii\log\FileTarget::class,
+                    'class' => yii\log\FileTarget::class,
                 ],
                 [
-                    'class' => \notamedia\sentry\Target::class,
+                    'class' => nohnaimer\sentry\Target::class,
                     'dsn' => $params['sentryDsn'],
                 ],
             ],
         ],
         'user' => [
-            'class' => \yii\web\User::class,
-            'identityClass' => \tests\models\User::class,
+            'class' => yii\web\User::class,
+            'identityClass' => tests\models\User::class,
             'enableSession' => false,
         ],
     ],

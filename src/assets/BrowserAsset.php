@@ -1,13 +1,13 @@
 <?php
 
-namespace notamedia\sentry\assets;
+namespace nohnaimer\sentry\assets;
 
 use yii\web\View;
 use yii\web\AssetBundle;
 
 /**
  * Class SentryAsset
- * @package notamedia\sentry\assets
+ * @package nohnaimer\sentry\assets
  */
 class BrowserAsset extends AssetBundle
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace notamedia\sentry\tests\unit;
+namespace nohnaimer\sentry\tests\unit;
 
 use Sentry\Event;
 use Sentry\EventId;
@@ -12,7 +12,7 @@ use Sentry\SentrySdk;
 use Sentry\State\Scope;
 use Codeception\Test\Unit;
 use Sentry\ClientInterface;
-use notamedia\sentry\Target;
+use nohnaimer\sentry\Target;
 
 /**
  * Unit-tests for SentryTarget
