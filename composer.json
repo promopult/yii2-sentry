@@ -1,5 +1,5 @@
 {
-  "name": "nohnaimer/yii2-sentry",
+  "name": "promopult/yii2-sentry",
   "description": "Yii2 logger for Sentry",
   "keywords": [
     "sentry",
